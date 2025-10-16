@@ -112,7 +112,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ${{ secrets.coofol }}/calculator-app
+        images: ${{ secrets.DOCKER_USERNAME }}/calculator-app
         tags: |
           type=ref,event=branch
           type=ref,event=pr
