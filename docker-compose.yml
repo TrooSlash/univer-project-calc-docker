@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  calculator:
+    build: .
+    image: calculator-app:latest
+    container_name: calculator
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: host
+    restart: unless-stopped
