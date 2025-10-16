@@ -1,1088 +1,237 @@
-<<<<<<< HEAD
-# 🧮 Калькулятор с CI/CD Pipeline
+# 🧮 Калькулятор с Docker и CI/CD
 
-[![CI/CD Pipeline](https://github.com/TrooSlash/univer-project-calc-docker/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/TrooSlash/univer-project-calc-docker/actions)
-[![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Docker](https://img.shields.io/badge/docker-ready-brightgreen.svg)](https://hub.docker.com/r/coofol/calculator-app)
+> Курсовой проект по DevOps практикам: контейнеризация Python-приложения с GUI
 
-Современное десктопное приложение-калькулятор на Python с PySide6, демонстрирующее профессиональные практики разработки ПО, включая автоматизированное тестирование, непрерывную интеграцию/развертывание и контейнеризацию.
-=======
-# 🧮 Calculator Application with CI/CD Pipeline# Калькулятор с CI/CD | Calculator with CI/CD
+## 📖 О проекте
 
+Этот проект создан в рамках курсовой работы и демонстрирует практическое применение современных DevOps-инструментов. Здесь вы найдете простой, но функциональный калькулятор с графическим интерфейсом, упакованный в Docker-контейнер.
 
+Да, это "всего лишь" калькулятор, но за его простотой скрывается настоящая инфраструктура: автоматизированное тестирование, контейнеризация и готовность к непрерывной интеграции и развертыванию.
 
-[![CI/CD Pipeline](https://github.com/TrooSlash/univer-project-calc-docker/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/TrooSlash/univer-project-calc-docker/actions)![CI/CD Pipeline](https://github.com/TrooSlash/univer-project-calc-docker/workflows/CI/CD%20Pipeline/badge.svg)
+### Что здесь интересного?
 
-[![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+- **Графический интерфейс в Docker** — запускаем приложение с GUI прямо из контейнера, работает как на Linux, так и на Windows (через WSL2)
+- **Автоматизированное тестирование** — полный набор unit-тестов для проверки всех функций калькулятора
+- **Готовность к CI/CD** — структура проекта позволяет легко интегрировать с GitHub Actions, GitLab CI или Jenkins
+- **Чистый код** — документированный Python-код с понятной архитектурой
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)Простое приложение-калькулятор на Python с использованием PySide6 для демонстрации CI/CD процессов с GitHub Actions и Docker.
+## 🎯 Цели курсовой работы
 
-[![Docker](https://img.shields.io/badge/docker-ready-brightgreen.svg)](https://hub.docker.com/r/coofol/calculator-app)
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
+1. Изучить принципы контейнеризации приложений с Docker
+2. Освоить работу с Docker Compose для управления контейнерами
+3. Внедрить практики CI/CD в разработку
+4. Настроить автоматизированное тестирование
+5. Научиться работать с GUI-приложениями в контейнерной среде
 
-> 📚 **Университетский проект**: Разработан в рамках курсовой работы для демонстрации современных DevOps практик и принципов разработки программного обеспечения.
+## ✨ Возможности калькулятора
 
-<<<<<<< HEAD
----
+Калькулятор умеет всё, что должен уметь обычный калькулятор:
 
-## 📖 Содержание
+- ➕ Сложение, вычитание, умножение, деление
+- 🔢 Работа с десятичными числами
+- ➖ Смена знака числа
+- ⌫ Удаление последнего символа
+- 🗑️ Очистка текущего значения (CE) и полная очистка (C)
+- 📱 Удобный интерфейс на PySide6
 
-- [О проекте](#о-проекте)
-- [Возможности](#возможности)
-- [Технологический стек](#технологический-стек)
-- [Быстрый старт](#быстрый-старт)
-  - [Требования](#требования)
-  - [Установка](#установка)
-  - [Локальный запуск](#локальный-запуск)
-  - [Запуск в Docker](#запуск-в-docker)
-- [Тестирование](#тестирование)
-- [CI/CD Pipeline](#cicd-pipeline)
-- [Структура проекта](#структура-проекта)
-- [Разработка](#разработка)
-- [Вклад в проект](#вклад-в-проект)
-- [Лицензия](#лицензия)
-- [Контакты](#контакты)
+## 🛠️ Технологии
 
----
+Проект построен на следующем стеке:
 
-## 📝 О проекте
-
-Данный проект демонстрирует полный цикл разработки программного обеспечения - от написания кода до развертывания. Он служит практическим примером реализации:
-
-- **Чистой архитектуры кода**: Хорошо структурированный, поддерживаемый код на Python
-- **Test-Driven Development**: Комплексное модульное тестирование с высоким покрытием
-- **Непрерывной интеграции**: Автоматизированное тестирование и проверка качества кода
-- **Непрерывного развертывания**: Автоматическая сборка и публикация Docker образов
-- **Контейнеризации**: Полная поддержка Docker с мультиплатформенной совместимостью
-- **Кроссплатформенного GUI**: Современный десктопный интерфейс на Qt (PySide6)
-
-Калькулятор предоставляет базовые арифметические операции и служит надежным примером профессиональных рабочих процессов разработки ПО.
-
----
-
-## ✨ Возможности
-
-### Основной функционал
-- ✅ **Базовые арифметические операции**: Сложение, вычитание, умножение, деление
-- ✅ **Десятичные числа**: Полная поддержка вычислений с плавающей точкой
-- ✅ **Смена знака**: Изменение знака числа кнопкой ±
-- ✅ **Backspace**: Удаление последней введенной цифры
-- ✅ **Функции очистки**: CE (очистка ввода) и C (полная очистка)
-- ✅ **Обработка ошибок**: Корректная обработка деления на ноль и некорректных операций
-
-### Технические возможности
-- 🧪 **Комплексное тестирование**: Полное покрытие модульными тестами с pytest
-- 🔄 **CI/CD Pipeline**: Автоматизированное тестирование, линтинг, сборка и развертывание
-- 🐳 **Поддержка Docker**: Контейнеризованное приложение с поддержкой GUI через WSLg/X11
-- 🎨 **Современный интерфейс**: Чистый, интуитивный UI на PySide6 (Qt 6.x)
-- 📊 **Качество кода**: Автоматический линтинг с Flake8 и Pylint
-- 🚀 **Кроссплатформенность**: Совместимость с Windows, Linux и macOS
-
----
-
-## 🛠️ Технологический стек
-
-| Компонент | Технология |
-|-----------|-----------|
-| **Язык программирования** | Python 3.11+ |
-| **GUI Framework** | PySide6 (Qt 6.x) |
-| **Тестирование** | pytest, pytest-qt |
-| **Качество кода** | Flake8, Pylint |
-| **CI/CD** | GitHub Actions |
-| **Контейнеризация** | Docker, Docker Compose |
-| **Система контроля версий** | Git, GitHub |
-
----
+| Технология | Версия | Назначение |
+|------------|--------|------------|
+| Python | 3.11 | Основной язык разработки |
+| PySide6 | 6.6.0+ | Библиотека для создания GUI |
+| Docker | - | Контейнеризация приложения |
+| Docker Compose | 3.8 | Оркестрация контейнеров |
+| pytest | 7.4.0+ | Фреймворк для тестирования |
+| pytest-qt | 4.2.0+ | Расширение pytest для Qt-приложений |
 
 ## 🚀 Быстрый старт
 
-### Требования
+### Предварительные требования
 
-Перед началом убедитесь, что у вас установлено:
+Для работы проекта вам понадобится:
 
-- **Python 3.11 или выше** - [Скачать Python](https://www.python.org/downloads/)
-- **Git** - [Скачать Git](https://git-scm.com/downloads)
-- **Docker** (опционально, для контейнерного развертывания) - [Скачать Docker](https://www.docker.com/get-started)
+- Docker и Docker Compose
+- Для Windows: WSL2 с поддержкой WSLg (для отображения GUI)
+- Для Linux: X Server (обычно уже установлен)
 
-Для поддержки GUI в Windows с Docker необходимо:
-- **Windows 11** с WSLg (рекомендуется) - встроенная поддержка X11
-- ИЛИ **VcXsrv** / **X410** для X11 forwarding на Windows 10
+### Запуск через Docker Compose
 
-### Установка
-
-1. **Клонируйте репозиторий**
-   ```bash
-   git clone https://github.com/TrooSlash/univer-project-calc-docker.git
-   cd univer-project-calc-docker
-   ```
-
-2. **Создайте виртуальное окружение**
-   ```bash
-   python -m venv .venv
-   ```
-
-3. **Активируйте виртуальное окружение**
-   
-   **Windows (PowerShell):**
-   ```powershell
-   .\.venv\Scripts\Activate.ps1
-   ```
-   
-   **Windows (CMD):**
-   ```cmd
-   .venv\Scripts\activate.bat
-   ```
-   
-   **Linux/macOS:**
-   ```bash
-   source .venv/bin/activate
-   ```
-
-4. **Установите зависимости**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-### Локальный запуск
-
-Просто запустите скрипт калькулятора:
-=======
-A modern desktop calculator application built with Python and PySide6, demonstrating professional software development practices including automated testing, continuous integration/deployment, and containerization.
-
-## 🚀 Особенности | Features
-
-> 📚 **University Project**: This project was developed as part of university coursework to demonstrate modern DevOps practices and software engineering principles.
-
-- ✅ Базовые арифметические операции (сложение, вычитание, умножение, деление)
-
----- ✅ Работа с десятичными числами
-
-- ✅ Изменение знака числа
-
-## 📖 Table of Contents- ✅ Удаление символов (Backspace)
-
-- ✅ Очистка ввода и полная очистка
-
-- [About](#about)- ✅ Современный графический интерфейс на PySide6
-
-- [Features](#features)- ✅ Полное покрытие unit-тестами
-
-- [Technology Stack](#technology-stack)- ✅ CI/CD pipeline с GitHub Actions
-
-- [Getting Started](#getting-started)- ✅ Докеризация приложения
-
-  - [Prerequisites](#prerequisites)
-
-  - [Installation](#installation)## 📋 Требования | Requirements
-
-  - [Running Locally](#running-locally)
-
-  - [Running with Docker](#running-with-docker)- Python 3.11+
-
-- [Testing](#testing)- PySide6
-
-- [CI/CD Pipeline](#cicd-pipeline)- pytest (для тестирования)
-
-- [Project Structure](#project-structure)
-
-- [Development](#development)## 🔧 Установка | Installation
-
-- [Contributing](#contributing)
-
-- [License](#license)### Локальная установка | Local Installation
-
-- [Contact](#contact)
+Это самый простой способ запустить калькулятор:
 
 ```bash
-
----# Клонировать репозиторий
-
+# Клонируем репозиторий
 git clone https://github.com/TrooSlash/univer-project-calc-docker.git
+cd univer-project-calc-docker
 
-## 📝 Aboutcd univer-project-calc-docker
-
-
-
-This project showcases a complete software development lifecycle implementation, from code to deployment. It serves as a practical demonstration of:# Создать виртуальное окружение
-
-python -m venv venv
-
-- **Clean Code Architecture**: Well-structured, maintainable Python code following best practices
-
-- **Test-Driven Development**: Comprehensive unit testing achieving high code coverage# Активировать виртуальное окружение
-
-- **Continuous Integration**: Automated testing and code quality checks on every commit# Windows:
-
-- **Continuous Deployment**: Automated Docker image building and publishing to registryvenv\Scripts\activate
-
-- **Containerization**: Full Docker support with multi-platform compatibility# Linux/Mac:
-
-- **Cross-Platform GUI**: Modern desktop interface using Qt framework (PySide6)source venv/bin/activate
-
-
-
-The calculator provides essential arithmetic operations while serving as a robust example of professional software development workflows suitable for production environments.# Установить зависимости
-
-pip install -r requirements.txt
-
----```
-
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-
-
-<<<<<<< HEAD
-Откроется окно калькулятора с интуитивно понятным интерфейсом.
-
-### Запуск в Docker
-
-#### Вариант 1: Загрузка с Docker Hub
-
-```bash
-docker pull coofol/calculator-app:latest
+# Собираем и запускаем контейнер
+docker-compose up --build
 ```
 
-#### Вариант 2: Локальная сборка
-=======
-## ✨ Features## 🎮 Использование | Usage
+### Запуск на Windows через WSL2
 
+Для пользователей Windows есть удобный PowerShell-скрипт:
 
-
-### Core Functionality### Запуск приложения | Running the Application
-
-- ✅ **Basic Arithmetic Operations**: Addition, subtraction, multiplication, division
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-
-- ✅ **Decimal Numbers**: Full floating-point calculation support```bash
-
-<<<<<<< HEAD
-#### Запуск контейнера
-
-**На Windows 11 с WSLg (рекомендуется):**
 ```powershell
+# Запускаем через подготовленный скрипт
 .\run-gui-wslg.ps1
 ```
 
-**На Linux:**
+Этот скрипт автоматически настроит все необходимые переменные окружения для работы GUI через WSLg.
+
+### Локальная разработка (без Docker)
+
+Если хотите поэкспериментировать с кодом:
+
 ```bash
-# Разрешить подключения к X server
-xhost +local:docker
+# Устанавливаем зависимости
+pip install -r requirements.txt
 
-# Запустить контейнер
-docker run --rm \
-  -e DISPLAY=$DISPLAY \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
-  coofol/calculator-app:latest
+# Запускаем калькулятор
+python calculator.py
 
-# После использования отозвать доступ
-xhost -local:docker
+# Запускаем тесты
+pytest test_calculator.py -v
 ```
-
-**С Docker Compose:**
-```bash
-docker-compose up
-```
-
-> 📖 Подробные инструкции по настройке GUI на разных платформах см. в [GUI-LAUNCH.md](GUI-LAUNCH.md)
-
----
 
 ## 🧪 Тестирование
 
-Проект поддерживает высокое качество кода благодаря комплексному автоматизированному тестированию.
+Проект покрыт unit-тестами, которые проверяют всю функциональность калькулятора.
 
-### Запуск всех тестов
-
-```bash
-pytest
-```
-
-### Запуск тестов с отчетом о покрытии
+### Запуск тестов локально
 
 ```bash
-pytest --cov=calculator --cov-report=term --cov-report=html
+pytest test_calculator.py -v
 ```
 
-### Подробный вывод тестов
-=======
-- ✅ **Sign Toggle**: Change number sign with ±/+/- buttonpython calculator.py
-
-- ✅ **Backspace**: Delete last entered digit```
-
-- ✅ **Clear Functions**: CE (Clear Entry) and C (Clear All)
-
-- ✅ **Error Handling**: Graceful handling of division by zero and invalid operations### Запуск тестов | Running Tests
-
-
-
-### Technical Features```bash
-
-- 🧪 **Comprehensive Testing**: Full unit test coverage with pytest# Запустить все тесты
-
-- 🔄 **CI/CD Pipeline**: Automated testing, linting, building, and deploymentpytest test_calculator.py -v
-
-- 🐳 **Docker Support**: Containerized application with GUI support via WSLg/X11
-
-- 🎨 **Modern UI**: Clean, intuitive interface built with PySide6 (Qt 6.x)# Запустить с покрытием кода
-
-- 📊 **Code Quality**: Automated linting with Flake8 and Pylintpytest test_calculator.py -v --cov=calculator --cov-report=html
-
-- 🚀 **Cross-Platform**: Compatible with Windows, Linux, and macOS```
-
-
-
----## 🐳 Docker
-
-
-
-## 🛠️ Technology Stack### Сборка образа | Build Image
-
-
-
-| Component | Technology |```bash
-
-|-----------|-----------|docker build -t calculator-app .
-
-| **Language** | Python 3.11+ |```
-
-| **GUI Framework** | PySide6 (Qt 6.x) |
-
-| **Testing** | pytest, pytest-qt |### Запуск контейнера | Run Container
-
-| **Code Quality** | Flake8, Pylint |
-
-| **CI/CD** | GitHub Actions |**Windows с WSL2:**
-
-| **Containerization** | Docker, Docker Compose |```bash
-
-| **Version Control** | Git, GitHub |docker run -it --rm -e DISPLAY=host.docker.internal:0 calculator-app
-
-```
-
----
-
-**Linux:**
-
-## 🚀 Getting Started```bash
-
-# Разрешить подключение к X server
-
-### Prerequisitesxhost +local:docker
-
-
-
-Before you begin, ensure you have the following installed:# Запустить контейнер
-
-docker run -it --rm \
-
-- **Python 3.11 or higher** - [Download Python](https://www.python.org/downloads/)  -e DISPLAY=$DISPLAY \
-
-- **Git** - [Download Git](https://git-scm.com/downloads)  -v /tmp/.X11-unix:/tmp/.X11-unix \
-
-- **Docker** (optional, for containerized deployment) - [Download Docker](https://www.docker.com/get-started)  calculator-app
-
-
-
-For GUI support on Windows with Docker, you'll need:# После использования отключить доступ
-
-- **Windows 11** with WSLg (recommended) - built-in X11 supportxhost -local:docker
-
-- OR **VcXsrv** / **X410** for X11 forwarding on Windows 10```
-
-
-
-### Installation**macOS с XQuartz:**
+### Запуск тестов в Docker
 
 ```bash
-
-1. **Clone the repository**# Установить XQuartz, затем:
-
-   ```bashxhost +localhost
-
-   git clone https://github.com/TrooSlash/univer-project-calc-docker.gitdocker run -it --rm -e DISPLAY=host.docker.internal:0 calculator-app
-
-   cd univer-project-calc-docker```
-
-   ```
-
-## 🔄 CI/CD Pipeline
-
-2. **Create a virtual environment**
-
-   ```bashПроект использует GitHub Actions для автоматизации:
-
-   python -m venv .venv
-
-   ```### Этапы Pipeline:
-
-
-
-3. **Activate the virtual environment**1. **Test** - Запуск unit-тестов с покрытием кода
-
-   2. **Lint** - Проверка качества кода (flake8, pylint)
-
-   **Windows (PowerShell):**3. **Build Docker** - Сборка и публикация Docker образа
-
-   ```powershell4. **Deploy** - Информация о развертывании
-
-   .\.venv\Scripts\Activate.ps1
-
-   ```### Триггеры:
-
-   
-
-   **Windows (CMD):**- Push в ветки `main` и `develop`
-
-   ```cmd- Pull requests в ветки `main` и `develop`
-
-   .venv\Scripts\activate.bat
-
-   ```## 📁 Структура проекта | Project Structure
-
-   
-
-   **Linux/macOS:**```
-
-   ```bashuniver-project-calc-docker/
-
-   source .venv/bin/activate├── .github/
-
-   ```│   └── workflows/
-
-│       └── ci-cd.yml          # CI/CD конфигурация
-
-4. **Install dependencies**├── calculator.py              # Основное приложение
-
-   ```bash├── test_calculator.py         # Unit-тесты
-
-   pip install -r requirements.txt├── requirements.txt           # Python зависимости
-
-   ```├── Dockerfile                 # Docker конфигурация
-
-└── README.md                  # Документация
-
-### Running Locally```
-
-
-
-Simply execute the calculator script:## 🧪 Тестирование | Testing
-
-
-
-```bashПроект включает комплексный набор тестов:
-
-python calculator.py
-
-```- Тест инициализации
-
-- Тест ввода чисел и десятичных дробей
-
-The calculator window will open with a clean, intuitive interface.- Тесты всех арифметических операций
-
-- Тест деления на ноль
-
-### Running with Docker- Тесты операций очистки
-
-- Тесты изменения знака
-
-#### Option 1: Pull from Docker Hub- Тесты цепочек операций
-
-
-
-```bashПокрытие кода: >90%
-
-docker pull coofol/calculator-app:latest
-
-```## 🛠️ Технологии | Technologies
-
-
-
-#### Option 2: Build Locally- **Python 3.11** - Язык программирования
-
-- **PySide6** - GUI фреймворк (Qt6)
-
-```bash- **pytest** - Фреймворк для тестирования
-
-docker build -t calculator-app .- **GitHub Actions** - CI/CD
-
-```- **Docker** - Контейнеризация
-
-
-
-#### Running the Container## 📝 Конфигурация для Docker Hub
-
-
-
-**On Windows 11 with WSLg (Recommended):**Для автоматической публикации в Docker Hub необходимо настроить secrets в GitHub:
-
-```powershell
-
-.\run-gui-wslg.ps11. `DOCKER_USERNAME` - Имя пользователя Docker Hub
-
-```2. `DOCKER_PASSWORD` - Токен доступа Docker Hub
-
-
-
-**On Linux:**Перейдите в Settings → Secrets and variables → Actions → New repository secret
-
-```bash
-
-# Allow X server connections## 🎯 Использование калькулятора | Calculator Usage
-
-xhost +local:docker
-
-### Кнопки:
-
-# Run container
-
-docker run --rm \- **0-9** - Цифры
-
-  -e DISPLAY=$DISPLAY \- **+, -, *, /** - Математические операции
-
-  -v /tmp/.X11-unix:/tmp/.X11-unix \- **=** - Вычислить результат
-
-  coofol/calculator-app:latest- **.** - Десятичная точка
-
-- **C** - Полная очистка (Clear All)
-
-# Revoke access after use- **CE** - Очистка текущего ввода (Clear Entry)
-
-xhost -local:docker- **←** - Удалить последний символ (Backspace)
-
-```- **±** - Изменить знак числа
-
-
-
-**With Docker Compose:**## 🤝 Вклад | Contributing
-
-```bash
-
-docker-compose up1. Fork репозиторий
-
-```2. Создайте feature branch (`git checkout -b feature/AmazingFeature`)
-
-3. Commit изменения (`git commit -m 'Add some AmazingFeature'`)
-
-> 📖 For detailed GUI setup instructions on different platforms, see [GUI-LAUNCH.md](GUI-LAUNCH.md)4. Push в branch (`git push origin feature/AmazingFeature`)
-
-5. Откройте Pull Request
-
----
-
-## 📄 Лицензия | License
-
-## 🧪 Testing
-
-Этот проект создан в образовательных целях.
-
-This project maintains high code quality with comprehensive automated testing.
-
-This project is created for educational purposes.
-
-### Run All Tests
-
-## 👤 Автор | Author
-
-```bash
-
-pytestTrooSlash
-
+docker build -t calculator-test .
+docker run --rm calculator-test pytest test_calculator.py -v
 ```
 
-## 📞 Контакты | Contact
+### Что тестируется?
 
-### Run Tests with Coverage Report
+- ✅ Инициализация приложения
+- ✅ Ввод чисел и десятичных дробей
+- ✅ Все арифметические операции
+- ✅ Очистка и удаление символов
+- ✅ Смена знака числа
+- ✅ Обработка ошибок (деление на ноль)
+- ✅ Цепочки последовательных операций
 
-GitHub: [@TrooSlash](https://github.com/TrooSlash)
-
-```bash
-
-pytest --cov=calculator --cov-report=term --cov-report=html---
-
-```
-
-⭐ Поставьте звезду, если проект был полезен! | Star this repo if you find it useful!
-
-### Run Tests Verbosely
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-
-```bash
-pytest -v
-```
-
-<<<<<<< HEAD
-### Структура тестов
-
-- `test_calculator.py` - Комплексные модульные тесты для логики калькулятора
-- Тесты покрывают все арифметические операции и граничные случаи
-- Тестирование GUI взаимодействий с pytest-qt
-- Проверка деления на ноль и обработки ошибок
-- Тесты операций очистки и функции backspace
-
-**Покрытие кода: Высокое** ✅
-=======
-### Test Structure
-
-- `test_calculator.py` - Comprehensive unit tests for calculator logic
-- Tests cover all arithmetic operations and edge cases
-- GUI interaction testing with pytest-qt
-- Division by zero and error handling validation
-- Clear operations and backspace functionality tests
-
-**Test Coverage: High** ✅
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-
----
-
-## 🔄 CI/CD Pipeline
-
-<<<<<<< HEAD
-Проект реализует полный CI/CD pipeline с использованием GitHub Actions, автоматически запускаемый при изменении кода.
-
-### Архитектура Pipeline
-
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│ Тестирование│────▶│  Линтинг    │────▶│   Сборка    │────▶│Развертывание│
-│  (pytest)   │     │(flake8/pyl) │     │   Docker    │     │  (Hub Push) │
-└─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
-```
-
-### Детали workflow
-
-**Триггеры:**
-- Push в ветки `main` или `develop`
-- Pull requests в ветки `main` или `develop`
-
-**Задачи Pipeline:**
-
-1. **Запуск тестов**
-   - Выполнение pytest с отчетом о покрытии
-   - Установка системных зависимостей для PySide6
-   - Генерация отчетов о покрытии
-
-2. **Проверка качества кода**
-   - Запуск Flake8 для проверки стиля кода
-   - Запуск Pylint для анализа кода
-   - Продолжение работы при некритичных предупреждениях
-
-3. **Сборка Docker образа**
-   - Сборка мультиплатформенного Docker образа
-   - Тегирование по commit SHA и имени ветки
-   - Кеширование слоев для ускорения сборки
-
-4. **Развертывание в реестр**
-   - Аутентификация в Docker Hub
-   - Push тегированных образов в реестр
-   - Только для ветки main (не для PR)
-
-Посмотреть полную конфигурацию workflow: [`.github/workflows/main.yml`](.github/workflows/main.yml)
-
-### Настройка CI/CD
-
-Для активации автоматического развертывания в Docker Hub:
-
-1. Создайте токен доступа Docker Hub на https://hub.docker.com/settings/security
-2. Добавьте секреты репозитория в GitHub Settings → Secrets and variables → Actions:
-   - `DOCKER_USERNAME`: Ваше имя пользователя Docker Hub
-   - `DOCKER_PASSWORD`: Ваш токен доступа Docker Hub (не пароль!)
-
----
-
-## 📁 Структура проекта
-=======
-This project implements a complete CI/CD pipeline using GitHub Actions, automatically triggered on code changes.
-
-### Pipeline Architecture
-
-```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   Testing   │────▶│   Linting   │────▶│   Docker    │────▶│   Deploy    │
-│   (pytest)  │     │ (flake8/py) │     │    Build    │     │  (Hub Push) │
-└─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
-```
-
-### Workflow Details
-
-**Triggered on:**
-- Push to `main` or `develop` branches
-- Pull requests targeting `main` or `develop`
-
-**Pipeline Jobs:**
-
-1. **Run Tests**
-   - Execute pytest with coverage reporting
-   - Install system dependencies for PySide6
-   - Generate coverage reports
-
-2. **Code Quality Check**
-   - Run Flake8 for style guide enforcement
-   - Run Pylint for code analysis
-   - Continue on non-critical warnings
-
-3. **Build Docker Image**
-   - Build multi-platform Docker image
-   - Tag with commit SHA and branch name
-   - Cache layers for faster builds
-
-4. **Deploy to Registry**
-   - Authenticate with Docker Hub
-   - Push tagged images to registry
-   - Only on main branch (not on PRs)
-
-View the complete workflow configuration: [`.github/workflows/main.yml`](.github/workflows/main.yml)
-
-### Setting Up CI/CD
-
-To enable automatic deployment to Docker Hub:
-
-1. Create Docker Hub access token at https://hub.docker.com/settings/security
-2. Add repository secrets in GitHub Settings → Secrets and variables → Actions:
-   - `DOCKER_USERNAME`: Your Docker Hub username
-   - `DOCKER_PASSWORD`: Your Docker Hub access token (not password!)
-
----
-
-## 📁 Project Structure
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
+## 📦 Структура проекта
 
 ```
 univer-project-calc-docker/
 │
-├── .github/
-│   └── workflows/
-<<<<<<< HEAD
-│       └── main.yml              # Конфигурация CI/CD pipeline
+├── calculator.py          # Основной код калькулятора
+├── test_calculator.py     # Unit-тесты
+├── requirements.txt       # Python-зависимости
 │
-├── calculator.py                 # Основной код приложения
-├── test_calculator.py            # Модульные тесты
-├── requirements.txt              # Зависимости Python
+├── Dockerfile            # Инструкции для сборки Docker-образа
+├── docker-compose.yml    # Конфигурация Docker Compose
 │
-├── Dockerfile                    # Определение Docker образа
-├── docker-compose.yml            # Конфигурация Docker Compose
-├── .gitignore                    # Правила игнорирования Git
+├── run-gui-wslg.ps1      # Скрипт запуска для Windows
 │
-├── run-gui-wslg.ps1             # Скрипт запуска GUI для Windows
-├── GUI-LAUNCH.md                # Документация по настройке GUI
-│
-├── LICENSE                       # Лицензия MIT
-└── README.md                     # Документация проекта
-=======
-│       └── main.yml              # CI/CD pipeline configuration
-│
-├── calculator.py                 # Main application code
-├── test_calculator.py            # Unit tests
-├── requirements.txt              # Python dependencies
-│
-├── Dockerfile                    # Docker image definition
-├── docker-compose.yml            # Docker Compose configuration
-├── .gitignore                    # Git ignore rules
-│
-├── run-gui-wslg.ps1             # Windows GUI launcher script
-├── GUI-LAUNCH.md                # GUI setup documentation
-│
-└── README.md                     # Project documentation
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
+└── README.md             # Этот файл :)
 ```
 
----
+## 🐳 Docker: что под капотом?
 
-<<<<<<< HEAD
-## 💻 Разработка
+### Dockerfile
 
-### Стандарты стиля кода
+Образ построен на `python:3.11-slim` и включает:
 
-Проект следует руководству по стилю PEP 8 с автоматической проверкой:
+- Все необходимые системные библиотеки для работы PySide6
+- Python-зависимости из `requirements.txt`
+- Настроенное окружение для работы с X11
+- Непривилегированного пользователя для безопасности
 
-- **Flake8** - Проверка соответствия стилю (макс. длина строки: 100)
-- **Pylint** - Комплексный анализ кода и проверка качества
+### Docker Compose
 
-### Запуск проверки качества кода
+Конфигурация настроена для:
 
-```bash
-# Запуск Flake8
-flake8 calculator.py --max-line-length=100
+- Проброса X11 сокета для отображения GUI
+- Использования host network mode для доступа к дисплею
+- Автоматического перезапуска при падении
 
-# Запуск Pylint
-pylint calculator.py --disable=C0111,C0103
+## 🔄 Интеграция CI/CD
+
+Проект готов к интеграции с популярными CI/CD платформами. Вот пример того, что можно автоматизировать:
+
+### Возможности для CI/CD
+
+1. **Автоматическое тестирование** при каждом push/merge request
+2. **Сборка Docker-образа** и публикация в registry
+3. **Линтинг кода** (flake8, pylint)
+4. **Проверка покрытия тестами**
+5. **Автоматический деплой** на тестовый стенд
+
+### Пример GitHub Actions (заготовка)
+
+```yaml
+name: CI/CD Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run tests
+        run: |
+          docker build -t calculator-test .
+          docker run --rm calculator-test pytest test_calculator.py -v
+  
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build -t calculator-app:latest .
 ```
 
-### Процесс разработки
+## 📚 Что я узнал, работая над проектом
 
-1. **Создайте ветку для фичи:**
-   ```bash
-   git checkout -b feature/название-фичи
-   ```
+Этот проект помог мне разобраться в нескольких важных вещах:
 
-2. **Внесите изменения и убедитесь, что тесты проходят:**
-=======
-## 💻 Development
+1. **Контейнеризация GUI-приложений** — это не так просто, как с обычными веб-сервисами, но вполне решаемо
+2. **Тестирование Qt-приложений** требует специальных инструментов вроде pytest-qt
+3. **Docker Compose** значительно упрощает работу с контейнерами в разработке
+4. **Хорошие практики DevOps** делают проект более надежным и простым в поддержке
 
-### Code Style Guidelines
+## 🤔 Известные ограничения
 
-This project adheres to PEP 8 Python style guide with automated enforcement:
+- GUI работает только на системах с X Server или WSLg
+- На macOS потребуется дополнительная настройка XQuartz
+- Для Windows без WSL2 GUI работать не будет (только headless-режим для тестов)
 
-- **Flake8** - Style guide enforcement (max line length: 100)
-- **Pylint** - Comprehensive code analysis and quality checks
+## 🛣️ Планы на будущее
 
-### Running Code Quality Checks
+Если проект будет развиваться дальше, можно добавить:
 
-```bash
-# Run Flake8
-flake8 calculator.py --max-line-length=100
+- [ ] Полноценный CI/CD pipeline с GitHub Actions
+- [ ] Публикацию образа в Docker Hub
+- [ ] Дополнительные функции калькулятора (память, история операций)
+- [ ] Web-версию интерфейса для работы без X11
+- [ ] Мониторинг и логирование
 
-# Run Pylint
-pylint calculator.py --disable=C0111,C0103
-```
+## 📝 Лицензия
 
-### Development Workflow
+Этот проект создан в образовательных целях. Подробности в файле [LICENSE](LICENSE).
 
-1. **Create a feature branch:**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+## 👨‍💻 Автор
 
-2. **Make changes and ensure tests pass:**
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-   ```bash
-   pytest
-   ```
-
-<<<<<<< HEAD
-3. **Запустите линтеры для проверки качества кода:**
-=======
-3. **Run linters to check code quality:**
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-   ```bash
-   flake8 calculator.py
-   pylint calculator.py
-   ```
-
-<<<<<<< HEAD
-4. **Закоммитьте изменения:**
-   ```bash
-   git add .
-   git commit -m "Add: описательное сообщение коммита"
-   ```
-
-5. **Отправьте в свой fork:**
-   ```bash
-   git push origin feature/название-фичи
-   ```
-
-6. **Создайте Pull Request** на GitHub
-
-### Соглашение о сообщениях коммитов
-
-Следуйте семантическим сообщениям коммитов:
-- `Add:` - Новая функция или функциональность
-- `Fix:` - Исправление ошибки
-- `Update:` - Обновление существующей функциональности
-- `Refactor:` - Рефакторинг кода
-- `Docs:` - Изменения в документации
-- `Test:` - Добавление или обновление тестов
+Создано с ❤️ для курсовой работы по DevOps
 
 ---
 
-## 🤝 Вклад в проект
+⭐ Если проект показался интересным, поставьте звездочку!
 
-Вклад приветствуется! Чтобы внести вклад в проект:
-
-1. **Сделайте Fork** репозитория
-2. **Создайте** ветку для фичи (`git checkout -b feature/AmazingFeature`)
-3. **Закоммитьте** изменения (`git commit -m 'Add some AmazingFeature'`)
-4. **Отправьте** в ветку (`git push origin feature/AmazingFeature`)
-5. **Откройте** Pull Request
-
-Пожалуйста, убедитесь:
-- Все тесты проходят (`pytest`)
-- Код соответствует стандартам стиля (`flake8`, `pylint`)
-- Сообщения коммитов понятны и описательны
-- Документация обновлена при необходимости
-
----
-
-## 🎮 Руководство пользователя
-
-### Операции калькулятора
-
-| Кнопка | Функция |
-|--------|---------|
-| **0-9** | Ввод цифр |
-| **+, -, ×, ÷** | Арифметические операции |
-| **=** | Вычислить результат |
-| **.** | Десятичная точка |
-| **C** | Очистить всё (сброс калькулятора) |
-| **CE** | Очистить ввод (очистка текущего ввода) |
-| **←** | Backspace (удалить последнюю цифру) |
-| **±** | Переключить знак (положительное/отрицательное) |
-
-### Примеры операций
-
-```
-Базовые вычисления:    5 + 3 = 8
-Десятичные числа:      3.14 × 2 = 6.28
-Отрицательные числа:   5 - 8 = -3
-Смена знака:           5 [±] = -5
-Цепочки операций:      2 + 3 × 4 = 20
-=======
-4. **Commit your changes:**
-   ```bash
-   git add .
-   git commit -m "Add: descriptive commit message"
-   ```
-
-5. **Push to your fork:**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-6. **Create a Pull Request** on GitHub
-
-### Commit Message Convention
-
-Follow semantic commit messages:
-- `Add:` - New feature or functionality
-- `Fix:` - Bug fix
-- `Update:` - Update existing feature
-- `Refactor:` - Code refactoring
-- `Docs:` - Documentation changes
-- `Test:` - Adding or updating tests
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! To contribute to this project:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
-3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
-4. **Push** to the branch (`git push origin feature/AmazingFeature`)
-5. **Open** a Pull Request
-
-Please ensure:
-- All tests pass (`pytest`)
-- Code follows style guidelines (`flake8`, `pylint`)
-- Commit messages are clear and descriptive
-- Documentation is updated if needed
-
----
-
-## 🎮 Usage Guide
-
-### Calculator Operations
-
-| Button | Function |
-|--------|----------|
-| **0-9** | Number input |
-| **+, -, ×, ÷** | Arithmetic operations |
-| **=** | Calculate result |
-| **.** | Decimal point |
-| **C** | Clear all (reset calculator) |
-| **CE** | Clear entry (clear current input) |
-| **←** | Backspace (delete last digit) |
-| **±** | Toggle sign (positive/negative) |
-
-### Example Operations
-
-```
-Basic calculation:     5 + 3 = 8
-Decimal numbers:       3.14 × 2 = 6.28
-Negative numbers:      5 - 8 = -3
-Sign toggle:           5 [±] = -5
-Chain operations:      2 + 3 × 4 = 20
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-```
-
----
-
-<<<<<<< HEAD
-## 📄 Лицензия
-
-Проект распространяется под лицензией MIT - см. файл [LICENSE](LICENSE) для деталей.
-
----
-
-## 👤 Автор
-=======
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👤 Author
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-
-**TrooSlash**
-
-- GitHub: [@TrooSlash](https://github.com/TrooSlash)
-<<<<<<< HEAD
-- Проект: [univer-project-calc-docker](https://github.com/TrooSlash/univer-project-calc-docker)
-=======
-- Project: [univer-project-calc-docker](https://github.com/TrooSlash/univer-project-calc-docker)
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-- Docker Hub: [coofol/calculator-app](https://hub.docker.com/r/coofol/calculator-app)
-
----
-
-<<<<<<< HEAD
-## 🙏 Благодарности
-
-Проект стал возможен благодаря:
-
-- **Команде PySide6** - За отличные привязки Qt 6 для Python
-- **GitHub** - За платформу CI/CD Actions
-- **Docker** - За технологию контейнеризации
-- **Сообществу pytest** - За комплексный фреймворк тестирования
-- **Python Software Foundation** - За язык программирования Python
-
-Особая благодарность open-source сообществу за предоставление инструментов и фреймворков, делающих современную разработку ПО эффективной и удобной.
-
----
-
-## 📚 Дополнительные ресурсы
-
-- [Документация PySide6](https://doc.qt.io/qtforpython/)
-- [Документация pytest](https://docs.pytest.org/)
-- [Документация Docker](https://docs.docker.com/)
-- [Документация GitHub Actions](https://docs.github.com/actions)
-=======
-## 🙏 Acknowledgments
-
-This project was made possible by:
-
-- **PySide6 Team** - For excellent Qt 6 Python bindings
-- **GitHub** - For Actions CI/CD platform
-- **Docker** - For containerization technology
-- **pytest Community** - For comprehensive testing framework
-- **Python Software Foundation** - For the Python language
-
-Special thanks to the open-source community for providing the tools and frameworks that make modern software development efficient and enjoyable.
-
----
-
-## 📚 Additional Resources
-
-- [PySide6 Documentation](https://doc.qt.io/qtforpython/)
-- [pytest Documentation](https://docs.pytest.org/)
-- [Docker Documentation](https://docs.docker.com/)
-- [GitHub Actions Documentation](https://docs.github.com/actions)
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-
----
-
-<div align="center">
-
-<<<<<<< HEAD
-**⭐ Если проект оказался полезным, пожалуйста, поставьте звезду!**
-
-Сделано с ❤️ для образовательных целей
-=======
-**⭐ If you found this project helpful, please consider giving it a star!**
-
-Made with ❤️ for educational purposes
->>>>>>> 9ec807b91df1f4639ace84c3a62c7a80d217e527
-
-</div>
+💬 Есть вопросы или предложения? Создавайте issue или pull request!
